@@ -1,5 +1,12 @@
 {
-  "dependencies": {
-    "jquery": "^3.6.1"
-  }
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
+  "name": "dot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Luvlore/dot.git",
+  "author": "luvlore <brunaluchini22@gmail.com>",
+  "license": "MIT"
 }
