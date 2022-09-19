@@ -1,0 +1,91 @@
+#dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #03b5b0;
+  height: 933px;
+  background-repeat: no-repeat;
+  background-position: 1750px 800px;
+  background-image: url('../icones/icon-brown.svg');
+}
+
+#dropdown-title {
+  margin-top: 80px;
+  font-size: 45px;
+  color: #ffcc33;
+}
+
+#dropdown-subtitle {
+  margin-top: 40px;
+  width: 945px;
+  height: 51px;
+  font-size: 20px;
+  color: white;
+}
+
+#cards {
+  margin-top: 60px;
+  display: flex;
+}
+
+.card {
+  width: 302px;
+  height: 274px;
+  background-color: white;
+  border-radius: 20px;
+  margin: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.212);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#first-card {
+  background-image: url('../icones/icon-02.svg');
+}
+
+#second-card {
+  background-image: url('../icones/icon-03.svg');
+}
+
+#thrid-card {
+  background-image: url('../icones/icon-04.svg');
+}
+
+.card-button-background {
+  background-color: #7a2b58;
+  height: 40px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.card-button {
+  width: 54px;
+  height: 54px;
+  background-color: white;
+  background-image: url('../icones/icon-arrow-down.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+#first-button {
+  margin-top: 250px;
+  margin-left: 145px;
+  position: absolute;
+}
+
+#second-button {
+  margin-top: 250px;
+  margin-left: 465px;
+  position: absolute;
+}
+
+#third-button {
+  margin-top: 250px;
+  margin-left: 785px;
+  position: absolute;
+}
