@@ -1,0 +1,163 @@
+#interative {
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#interative-text {
+  width: 945px;
+  font-size: 20px;
+  color: #707070;
+}
+
+#interative-circle-image {
+  background-image: url('../icones/interactive.svg');
+  background-repeat: no-repeat;
+  height: 648px;
+  width: 600px;
+}
+
+#interative-circle {
+  max-width: 335px;
+  max-height: 335px;
+  border: #000000 2px solid;
+  background-color: #ffcc33;
+  border-radius: 100%;
+  position: absolute;
+  left: 50%;
+  margin-top: 160px;
+  transform: translate(-50%);
+}
+
+.circle {
+  width: 55px;
+  height: 55px;
+  position: relative;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.281);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.plus {
+  background-color: #03b5b0;
+  background-image: url('../icones/icon-plus.svg');
+}
+
+.sub {
+  background-color: #7a2b58;
+  background-image: url('../icones/icon-minos.svg');
+}
+
+.circle#first {
+  position: absolute;
+  left: 140px;
+  top: -60px;
+}
+
+.circle#second  {
+  position: absolute;
+  left: -80px;
+  bottom: -50px;
+}
+
+.circle#third {
+  position: absolute;
+  right: -80px;
+  bottom: -50px;
+}
+
+#interative-circle-text {
+  position: relative;
+  text-align: center;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 335px;
+  height: 335px;
+}
+
+.interative-texts {
+  width: 236px;
+  position: absolute;
+  font-size: 18px;
+  opacity: 0%;
+  transition: 0.6s opacity;
+}
+
+.show {
+  visibility: visible;
+  opacity: 100%;
+}
+
+@media (max-width: 600px) {
+  #interative {
+    height: 752px;
+  }
+
+  #interative-circle-image {
+    width: 338px;
+    background-size: 338px 346px;
+  }
+
+  #interative-circle {
+    position: relative;
+    width: 159px;
+    height: 159px;
+    bottom: 60px;
+  }
+
+  #interative-text {
+    margin-top: 35px;
+    margin-bottom: 40px;
+    width: 321px;
+    font-size: 16px;
+  }
+
+  .circle {
+    width: 29px;
+    height: 29px;
+  }
+
+  .circle#first {
+    left: 65px;
+    top: -50px;
+  }
+
+  .circle#second {
+    left: -55px;
+    bottom: -30px;
+  }
+
+  .circle#third {
+    right: -55px;
+    bottom: -30px;
+  }
+
+  .plus {
+    background-size: 12px;
+    background-image: url('../icones/icon-plus.svg');
+  }
+
+  .sub {
+    background-size: 12px;
+    background-image: url('../icones/icon-minos.svg');
+  }
+
+  #interative-circle-text {
+    width: 140px;
+    height: 140px;
+    top: 15px;
+    left: 10px;
+  }
+
+  .interative-texts {
+    font-size: 12px;
+    width: 140px;
+  }
+}

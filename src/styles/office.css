@@ -1,6 +1,6 @@
 #office {
   background-color: #353535;
-  height: 633px;
+  height: 683px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,6 +18,7 @@
   width: 944px;
   height: 429px;
   justify-content: space-between;
+  align-items: center;
 }
 
 #office-text {
@@ -31,4 +32,23 @@
   background-image: url('../imagens/img-01.png');
   width: 462px;
   height: 365px;
+  border-radius: 0 0 50px 0;
+}
+
+#blue-arrow {
+  background-image: url('../icones/icon-blue.svg');
+  right: 43.4%;
+  margin-bottom: 365px;
+}
+
+#yellow-arrow {
+  background-image: url('../icones/icon-yellow.svg  ');
+  right: 25.15%;
+  margin-top: 340px;
+}
+
+.arrows {
+  width: 144px;
+  height: 83px;
+  position: absolute;
 }

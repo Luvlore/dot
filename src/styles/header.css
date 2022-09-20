@@ -13,7 +13,7 @@ header {
 }
 
 #logo {
-  width: 275px;
+  width: 252px;
 }
 
 #header-title {
@@ -43,8 +43,27 @@ header {
 }
 
 @media (max-width: 1024px) {
+  header {
+    height: 470px;
+  }
+
   #hero {
     background-image: url('../imagens/header-1024.png');
     height: 100%;
+    justify-content: flex-start;
+  }
+
+  #logo {
+    width: 139px;
+    margin-top: 53px;
+  }
+
+  #title {
+    font-size: 45px;
+    margin-top: 113px;
+  }
+
+  #subtitle {
+    font-size: 18px;
   }
 }

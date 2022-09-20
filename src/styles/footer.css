@@ -1,0 +1,14 @@
+#footer {
+  height: 300px;
+  background-color: #7a2b58;
+  background-image: url('../icones/icon-logo-footer.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 400px;
+}
+
+@media (max-width: 600px) {
+  #footer {
+    background-size: 250px;
+  }
+}

@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="styles/about.css">
   <link rel="stylesheet" href="styles/dropdown.css">
   <link rel="stylesheet" href="styles/office.css">
+  <link rel="stylesheet" href="styles/interative.css">
+  <link rel="stylesheet" href="styles/footer.css">
 </head>
 
 <body>
@@ -27,7 +29,7 @@
   <section id="about">
     <h2 id="about-title">Lorem Ipsun</h2>
     <div id="about-infos">
-      <img src="./icones/icon-01.svg" alt="icon-01">
+      <img src="./icones/icon-01.svg" alt="icon-01" id="about-image">
       <div id="about-infos-text">
         <p>
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
@@ -41,7 +43,6 @@
       </div>
     </div>
   </section>
-
   <section id="dropdown">
     <h2 id="dropdown-title">Dropdown</h2>
     <p id="dropdown-subtitle">
@@ -52,14 +53,36 @@
     <div id="cards">
       <div id="first-card" class="card">
         <div class="card-button-background">
+          <div class="dropdown-text-box">
+            <p class="dropdown-text">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+              laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+              ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
         </div>
       </div>
       <div id="second-card" class="card">
         <div class="card-button-background">
+          <div class="dropdown-text-box">
+            <p class="dropdown-text">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+              laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+              ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+
         </div>
       </div>
       <div id="thrid-card" class="card">
         <div class="card-button-background">
+          <div class="dropdown-text-box">
+            <p class="dropdown-text">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+              laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+              ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
         </div>
       </div>
       <div class="card-button" id="first-button"></div>
@@ -82,14 +105,81 @@
         blandit
         praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
       </p>
-      <div id="blue-arrow"></div>
-      <div id="yellow-arrow"></div>
       <div id="office-image"></div>
+      <div class="arrows" id="blue-arrow"></div>
+      <div class="arrows" id="yellow-arrow"></div>
     </div>
   </section>
 
+  <section id="interative">
+    <p id="interative-text">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+      dolore
+      magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+      lobortis nisl
+      ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+      consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
+      blandit
+      praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+    </p>
+    <div id="interative-circle-image">
+      <div id="interative-circle">
+        <div id="circles">
+          <div class="circle plus" id="first"></div>
+          <div class="circle plus" id="second"></div>
+          <div class="circle plus" id="third"></div>
+        </div>
+        <div id="interative-circle-text">
+          <p class="interative-texts" id="interative-circle-text-first">
+            Este texto é referente ao botão que está sobrea flecha <strong>amarela</strong>!
+          </p>
+          <p class="interative-texts" id="interative-circle-text-second">
+            Este texto é referente ao botão que está sobrea flecha <strong>vermelha</strong>!
+          </p>
+          <p class="interative-texts" id="interative-circle-text-third">
+            Este texto é referente ao botão que está sobrea flecha <strong>cinza</strong>!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer"></footer>
+
   <script src="jquery.js"></script>
   <script>
+    const circles = $('.circle');
+    const cardButtons = $('.card-button')
+    const dropdownBox = $('.dropdown-text-box')
+
+    $(document).ready(() => {
+      for (let i = 0; i < cardButtons.length; i += 1) {
+        $(cardButtons[i]).click((event) => {
+          dropdownOpen = dropdownBox.hasClass('dropdown-text-show')
+          for (let id = 0; id < cardButtons.length; id += 1) {
+            if (event.target === cardButtons[id]) {
+              $(dropdownBox[id]).toggleClass('dropdown-text-show');
+              $(cardButtons[id]).toggleClass('card-button-active');
+            }
+          }
+        })
+      }
+
+      for (let i = 0; i < circles.length; i += 1) {
+        $(circles[i]).click((event) => {
+          for (let id = 0; id < circles.length; id += 1) {
+            if (event.target === circles[id]) {
+              $(`#interative-circle-text-${circles[id].id}`).toggleClass('show')
+              $(circles[id]).toggleClass('sub plus')
+            } else {
+              $(`#interative-circle-text-${circles[id].id}`).removeClass('show')
+              $(circles[id]).removeClass('sub')
+              $(circles[id]).addClass('plus')
+            }
+          }
+        })
+      }
+    })
   </script>
 </body>
 
