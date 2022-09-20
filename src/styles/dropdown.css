@@ -1,8 +1,9 @@
 #dropdown {
+  transition: 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 933px;
+  height: 633px;
   background-color: #03b5b0;
   background-repeat: no-repeat;
   background-position: bottom -65px right -170px;
@@ -29,7 +30,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.6s ease-in-out;
+  transition: 0.6s ease;
 }
 
 .dropdown-text {
@@ -62,6 +63,7 @@
   background-color: white;
   border-radius: 20px;
   margin: 10px;
+  margin-bottom: 40px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.212);
   background-repeat: no-repeat;
   background-position: center;
@@ -85,6 +87,8 @@
   height: 40px;
   width: 100%;
   position: absolute;
+  display: flex;
+  justify-content: center;
   border-radius: 0 0 20px 20px;
   bottom: 0;
 }
@@ -98,24 +102,28 @@
   background-position: 11px 18px;
   border-radius: 100%;
   cursor: pointer;
-  margin-top: 250px;
-  position: absolute;
+  position: relative;
+  top: 5px;
+  transition: 0.6s ease-in-out;
 }
 
 .card-button-active {
+  transform: rotate(180deg);
   background-color: #7a2b58;
   background-position: center 15px;
   background-image: url('../icones/icon-arrow-up.svg');
 }
 
-#first-button {
-  margin-left: 135px;
-}
+@media (max-width: 600px) {
+  #dropdown {
+    height: 1793px;
+  }
 
-#second-button {
-  margin-left: 455px;
-}
+  #dropdown-title {
+    visibility: hidden;
+  }
 
-#third-button {
-  margin-left: 775px;
+  #cards {
+    flex-direction: column;
+  }
 }

@@ -60,6 +60,7 @@
               ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
             </p>
           </div>
+          <div class="card-button" id="third-button"></div>
         </div>
       </div>
       <div id="second-card" class="card">
@@ -71,7 +72,7 @@
               ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
             </p>
           </div>
-
+          <div class="card-button" id="second-button"></div>
         </div>
       </div>
       <div id="thrid-card" class="card">
@@ -83,11 +84,9 @@
               ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
             </p>
           </div>
+          <div class="card-button" id="first-button"></div>
         </div>
       </div>
-      <div class="card-button" id="first-button"></div>
-      <div class="card-button" id="second-button"></div>
-      <div class="card-button" id="third-button"></div>
     </div>
   </section>
 
@@ -155,12 +154,16 @@
     $(document).ready(() => {
       for (let i = 0; i < cardButtons.length; i += 1) {
         $(cardButtons[i]).click((event) => {
-          dropdownOpen = dropdownBox.hasClass('dropdown-text-show')
           for (let id = 0; id < cardButtons.length; id += 1) {
             if (event.target === cardButtons[id]) {
               $(dropdownBox[id]).toggleClass('dropdown-text-show');
               $(cardButtons[id]).toggleClass('card-button-active');
+              $('#dropdown').css('height', '933px')
             }
+          }
+          const dropdownOpen = dropdownBox.hasClass('dropdown-text-show');
+          if (!dropdownOpen) {
+            $('#dropdown').css('height', '633px')
           }
         })
       }
