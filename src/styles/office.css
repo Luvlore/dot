@@ -52,3 +52,50 @@
   height: 83px;
   position: absolute;
 }
+
+@media (max-width: 600px) {
+  #office {
+    height: 780px;
+  }
+
+  #office-title {
+    margin-top: 30px;
+    font-size: 25;
+  }
+
+  #office-info {
+    margin-top: 33px;
+    width: 360px;
+    flex-direction: column-reverse;
+  }
+
+  #office-image {
+    width: 364px;
+    height: 288px;
+    background-size: 364px 288px;
+  }
+
+  #office-text {
+    width: 318px;
+    height: 85px;
+    color: white;
+    font-size: 16px;
+  }
+
+  .arrows {
+    width: 114px;
+    height: 65px;
+  }
+
+  #blue-arrow {
+    background-size: 114px 65px;
+    left: -35px;
+    margin-bottom: 390px;
+  }
+
+  #yellow-arrow {
+    background-size: 114px 65px;
+    right: -34px;
+    margin-bottom: 125px;
+  }
+}
