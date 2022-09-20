@@ -46,8 +46,14 @@
   <section id="dropdown">
     <h2 id="dropdown-title">Dropdown</h2>
     <p id="dropdown-subtitle">
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-      laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+      dolore
+      magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+      lobortis nisl
+      ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+      consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
+      blandit
+      praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
     </p>
 
     <div id="cards">
@@ -106,7 +112,7 @@
       </p>
       <div id="office-image"></div>
       <div class="arrows" id="blue-arrow"></div>
-      <div class="arrows" id="yellow-arrow"></div>
+      <div class="arrows" id="yellow-arrow" style="overflow: hidden;"></div>
     </div>
   </section>
 
@@ -148,8 +154,10 @@
   <script src="jquery.js"></script>
   <script>
     const circles = $('.circle');
-    const cardButtons = $('.card-button')
-    const dropdownBox = $('.dropdown-text-box')
+    const cardButtons = $('.card-button');
+    const dropdownBox = $('.dropdown-text-box');
+    const [dropdownWitdh] = $('#dropdown').css('width').split('px');
+    const [dropdownHeight] = $('#dropdown').css('height').split('px');
 
     $(document).ready(() => {
       for (let i = 0; i < cardButtons.length; i += 1) {
@@ -158,31 +166,45 @@
             if (event.target === cardButtons[id]) {
               $(dropdownBox[id]).toggleClass('dropdown-text-show');
               $(cardButtons[id]).toggleClass('card-button-active');
-              $('#dropdown').css('height', '933px')
+              let dropdownMargin = 0;
+
+              if (Number(dropdownWitdh) > 600) {
+                const dropdownOpen = dropdownBox.hasClass('dropdown-text-show');
+                const height = !dropdownOpen
+                  ? Number(dropdownHeight)
+                  : Number(dropdownHeight) + 300;
+
+                $('#dropdown').css('height', `${height}`);
+              } else {
+                const cards = $('.card');
+                $(cards[id]).toggleClass('active');
+                for (const card of cards) {
+                  if ($(card).hasClass('active')) {
+                    dropdownMargin += 340;
+                  }
+                }
+                $('#dropdown').css('height', `${Number(dropdownHeight) + dropdownMargin}`);
+              }
             }
           }
-          const dropdownOpen = dropdownBox.hasClass('dropdown-text-show');
-          if (!dropdownOpen) {
-            $('#dropdown').css('height', '633px')
-          }
-        })
+        });
       }
 
       for (let i = 0; i < circles.length; i += 1) {
         $(circles[i]).click((event) => {
           for (let id = 0; id < circles.length; id += 1) {
             if (event.target === circles[id]) {
-              $(`#interative-circle-text-${circles[id].id}`).toggleClass('show')
-              $(circles[id]).toggleClass('sub plus')
+              $(`#interative-circle-text-${circles[id].id}`).toggleClass('show');
+              $(circles[id]).toggleClass('sub plus');
             } else {
-              $(`#interative-circle-text-${circles[id].id}`).removeClass('show')
-              $(circles[id]).removeClass('sub')
-              $(circles[id]).addClass('plus')
+              $(`#interative-circle-text-${circles[id].id}`).removeClass('show');
+              $(circles[id]).removeClass('sub');
+              $(circles[id]).addClass('plus');
             }
           }
-        })
+        });
       }
-    })
+    });
   </script>
 </body>
 

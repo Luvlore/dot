@@ -3,22 +3,22 @@
   height: 683px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 #office-title {
-  margin-top: 80px;
   font-size: 38px;
   color: #03b5b0;
 }
 
 #office-info {
-  margin-top: 67px;
   display: flex;
   width: 944px;
   height: 429px;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 }
 
 #office-text {
@@ -37,13 +37,13 @@
 
 #blue-arrow {
   background-image: url('../icones/icon-blue.svg');
-  right: 43.4%;
+  right: 43%;
   margin-bottom: 365px;
 }
 
 #yellow-arrow {
   background-image: url('../icones/icon-yellow.svg  ');
-  right: 25.15%;
+  right: 25%;
   margin-top: 340px;
 }
 
@@ -59,25 +59,27 @@
   }
 
   #office-title {
-    margin-top: 30px;
     font-size: 25;
+    margin-bottom: 650px;
   }
 
   #office-info {
+    position: absolute;
+    padding-top: 80px;
     margin-top: 33px;
     width: 360px;
+    height: 650px;
     flex-direction: column-reverse;
   }
 
   #office-image {
-    width: 364px;
+    width: 360px;
     height: 288px;
-    background-size: 364px 288px;
+    background-size: 360px 288px;
   }
 
   #office-text {
     width: 318px;
-    height: 85px;
     color: white;
     font-size: 16px;
   }
@@ -90,12 +92,12 @@
   #blue-arrow {
     background-size: 114px 65px;
     left: -35px;
-    margin-bottom: 390px;
+    margin-bottom: 620px;
   }
 
   #yellow-arrow {
     background-size: 114px 65px;
-    right: -34px;
-    margin-bottom: 125px;
+    right: -35px;
+    margin-bottom: 345px;
   }
 }
